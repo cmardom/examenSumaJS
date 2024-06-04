@@ -1,3 +1,5 @@
+let cartas=[];
+
 
 let player = {
     id: 0,

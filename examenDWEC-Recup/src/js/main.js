@@ -8,24 +8,39 @@ let ordenValores = ['A','2','3','4','5','6','7','8','9','J','Q','K'];
 
 //Variables
 let juegosAcabados = 0;
+        //para controlar los estados del juego:
 let estado = 0; /* 0=elegir carta; 1=elegir pila; 2=fin */
 const CARTA = 0;
 const PILA = 1;
 const FIN = 2;
+
+
 let cartaSeleccionada = -1; //Índice de carta seleccionada
 let pila1 = [];
 let puntosPila1 = 0;
 let pila2 = [];
 let puntosPila2 = 0;
 
-for(let i=2;i<10;i++){
-    cartasOrdenadas = cartasOrdenadas.concat("" + i + palo);
+/*¡CREAR CARTAS!*/
+let cartasOrdenadas=[];
+let palos = ["H"]; //despues los rellenamos con el resto de palos
+
+
+for (let palo of palos){
+    cartasOrdenadas = cartasOrdenadas.concat("A"+palo);
+    for(let i=2;i<10;i++){
+        cartasOrdenadas = cartasOrdenadas.concat("" + i + palo);
+    }
+    for(let figura of ['J','Q','K']) {
+        cartasOrdenadas = cartasOrdenadas.concat(figura + palo);
+    }
+
 }
-for(let figura of ['J','Q','K']) {
-    cartasOrdenadas = cartasOrdenadas.concat(figura + palo);
-}
-let cartas = _.shuffle(cartasOrdenadas);
-cartas = cartasOrdenadas; //Comentar al acabar
+
+
+
+cartas = _.shuffle(cartasOrdenadas);
+cartas = cartasOrdenadas; //Comentar al acabar!!!!
 console.log(cartasOrdenadas);
 console.log(cartas);
 
@@ -53,14 +68,16 @@ for(let i=0; i<12; i++) {
         voltearCarta(i, etqCarta);
     });
     //voltear carta si estaba en juego
-    if (lsEnJuego && esMenor(cartas[i], siguiente)){
-        etqCarta.src = rutaCarta(i);
-    }
+    // if (lsEnJuego && esMenor(cartas[i], siguiente)){
+    //     etqCarta.src = rutaCarta(i);
+    // }
 }
+
 const etqPila1=document.getElementById('pila1');
 etqPila1.addEventListener('click', () => {
     clickPila(1, cartaSeleccionada);
 });
+
 const etqPila2=document.getElementById('pila2');
 etqPila2.addEventListener('click', () => {
     clickPila(2, cartaSeleccionada);

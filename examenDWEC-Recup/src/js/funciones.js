@@ -26,14 +26,39 @@ function restablecerCartas(){
 function voltearCarta(i, etqCarta){
     //Si se puede pulsar sobre las cartas y se pulse
     //una carta que esté bocabajo, voltear la carta.
+
+    if (etqCarta.src.includes("red") && estado==CARTA){
+        etqCarta.src = "assets/img/cartas/"+cartas[i]+".png";
+        estado=PILA;
+        cartaSeleccionada=i; //Solo se guarda el indice
+    }
+
+
 }
 
 function clickPila(pila,indice) {
     //SI ES EL MOMENTO DE SELECIONAR PILA
+    if (estado == PILA){
+        let etqPila, puntosPila;
 
         //COLOCAR CARTA SELECCIONADA EN PILA pila
-            //SI NO HAY CARTAS EN LA PILA, SUSTITUIR LA GRIS
+        if (pila === 1){
+            etqPila = etqPila1;
+            puntosPila = puntosPila1;
+        } else {
+            etqPila = etqPila2;
+            puntosPila = puntosPila2;
+        }
+
+        //SI NO HAY CARTAS EN LA PILA, SUSTITUIR LA GRIS
+        if (puntosPila==0){
+
+
             //SI YA HAY CARTAS EN LA PILA, AÑADIR ETIQUETA IMG
+        }else{
+
+        }
+
 
         //SUMAR PUNTUACIÓN A LA pila
 
@@ -42,6 +67,9 @@ function clickPila(pila,indice) {
         //SI NO QUEDAN MÁS CARTAS, INDICAR PARTIDA ACABADA
 
         //SI QUEDAN MÁS CARTAS, INDICAR QUE TOCA SELECCIONAR CARTA
+    }
+
+
 
 }
 
