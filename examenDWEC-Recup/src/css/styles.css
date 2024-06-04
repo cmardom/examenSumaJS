@@ -1,0 +1,17 @@
+
+
+img {
+    width: 100px;
+}
+
+#pila1 img, #pila2 img {
+    margin-left: -70px;
+}
+
+#pila1 img:first-child, #pila2 img:first-child {
+    margin-left: 0px;
+}
+
+h1 {
+    font-family:'Brush Script MT', Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}

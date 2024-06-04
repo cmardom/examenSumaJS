@@ -1,0 +1,34 @@
+{
+  "players": [
+    {
+      "id": 1,
+      "nombre": "Laura",
+      "juegosAcabados": 0,
+      "passwd": "passwd"
+    },
+    {
+      "id": 2,
+      "nombre": "Carlos",
+      "juegosAcabados": 2,
+      "passwd": "passwd"
+    },
+    {
+      "id": 3,
+      "nombre": "Juan",
+      "juegosAcabados": 3,
+      "passwd": "passwd"
+    },
+    {
+      "id": 4,
+      "nombre": "Jose",
+      "juegosAcabados": 0,
+      "passwd": "passwd"
+    },
+    {
+      "id": 5,
+      "nombre": "Miguel",
+      "juegosAcabados": 0,
+      "passwd": "passwd"
+    }
+  ]
+}

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reloj</title>
+    <!-- Incluir el CSS -->
+    <link rel="stylesheet" href="css/styles.css"/>
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <script src="js/underscore-min.js"></script>
+</head>
+
+<body class="container-fluid">
+    <div id="formulario" class="row mt-2 ml-5" hidden>
+        <input type="text" id="login" class=" col-3">
+        <input type="password" id="password" class=" col-3">
+        <button id="botonConsultar" class="btn btn-danger ml-5 col-2">Consultar</button>
+        <button id="botonCerrarSesion" class="btn btn-danger ml-1 col-2" hidden>Cerrar sesión</button>
+
+        <div class="col-5 mb-2 text-center">
+            <h1 id="nombre_usuario"></h1>
+        </div>
+        <div id="marcadorJuegos" class="col-4 text-right" hidden>
+            <h1>Juegos acabados: <span id="numeroJuegos">0</span></h1>
+        </div>
+    </div>
+    <div id="zonaJuego">
+    <div class="row">
+        <div class="col-6 mt-2">
+            <h1>Pila 1: suma=<span id="contadorA">0</span></h1>
+        </div>
+        <div class="col-6 mt-2">
+            <h1>Pila 2: suma=<span id="contadorB">0</span></h1>
+        </div>
+    </div>
+    <div class="row">
+        <div id="pila1" class="col-6 mt-2">
+            <img src="assets/img/cartas/grey_back.png"/>
+        </div>
+        <div id="pila2" class="col-6 mt-2">
+            <img src="assets/img/cartas/grey_back.png"/>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-4 text-right">
+            <h1 id="siguiente">Seleccione carta:</h1> 
+        </div>
+        <div id="divMensaje" class="col-4">
+            <button id="nuevoJuego" class="btn btn-danger">Nuevo juego</button>
+        </div>
+    </div>
+
+    <div id="mesa" class="row">
+        <div class="col-2 mt-2"><img id="carta0" src="assets/img/cartas/red_back.png"/></div>
+        <div class="col-2 mt-2"><img id="carta1" src="assets/img/cartas/red_back.png"/></div>
+        <div class="col-2 mt-2"><img id="carta2" src="assets/img/cartas/red_back.png"/></div>
+        <div class="col-2 mt-2"><img id="carta3" src="assets/img/cartas/red_back.png"/></div>
+        <div class="col-2 mt-2"><img id="carta4" src="assets/img/cartas/red_back.png"/></div>
+        <div class="col-2 mt-2"><img id="carta5" src="assets/img/cartas/red_back.png"/></div>
+        <div class="col-2 mt-2"><img id="carta6" src="assets/img/cartas/red_back.png"/></div>
+        <div class="col-2 mt-2"><img id="carta7" src="assets/img/cartas/red_back.png"/></div>
+        <div class="col-2 mt-2"><img id="carta8" src="assets/img/cartas/red_back.png"/></div>
+        <div class="col-2 mt-2"><img id="carta9" src="assets/img/cartas/red_back.png"/></div>
+        <div class="col-2 mt-2"><img id="carta10" src="assets/img/cartas/red_back.png"/></div>
+        <div class="col-2 mt-2"><img id="carta11" src="assets/img/cartas/red_back.png"/></div>
+    </div>
+    </div>
+        <!-- Incluir los javascripts -->
+    <script src="js/componentes.js"></script>
+    <script src="js/funciones.js"></script>
+    <script src="js/main.js"></script>
+</body>
+
+</html>
