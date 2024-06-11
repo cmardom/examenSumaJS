@@ -2,6 +2,8 @@ let cartas=[];
 let etqContadorA = document.getElementById("contadorA");
 let etqContadorB = document.getElementById("contadorB");
 
+
+
 const etqNombreUsuario = document.getElementById("nombre_usuario");
 const inputUsuario = document.getElementById("login");
 const inputPass = document.getElementById("password");
