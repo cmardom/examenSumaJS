@@ -1,5 +1,13 @@
 let cartas=[];
+let etqContadorA = document.getElementById("contadorA");
+let etqContadorB = document.getElementById("contadorB");
 
+const etqNombreUsuario = document.getElementById("nombre_usuario");
+const inputUsuario = document.getElementById("login");
+const inputPass = document.getElementById("password");
+
+const btnCerrarSesion = document.getElementById("botonCerrarSesion");
+const btnConsultar = document.getElementById("botonConsultar");
 
 let player = {
     id: 0,
@@ -7,11 +15,14 @@ let player = {
     juegosAcabados: 0
 };
 
-function cargar_player(id, nombre, resultado, enJuego = "A") {
+function cargar_player(id, nombre, juegosAcabados = "A") {
     player.id = id;
     player.nombre = nombre;
-    player.resultado = resultado;
-    player.enJuego = enJuego;
+    player.juegosAcabados = juegosAcabados;
+
+    //guardar en localStorage
+    localStorage.setItem("player", JSON.stringify(player));
+
 }
 
 let enJuego = {

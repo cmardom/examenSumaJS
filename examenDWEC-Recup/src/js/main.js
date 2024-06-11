@@ -1,7 +1,6 @@
+formulario.hidden = false;
+zonaJuego.hidden = true;
 
-// Descomentar para parte 3
-// formulario.hidden = false;
-// zonaJuego.hidden = true;
 
 let ordenValores = ['A','2','3','4','5','6','7','8','9','J','Q','K'];
 //Generar cartas, barajarlas y seleccionar la 12 a usar.
@@ -14,6 +13,7 @@ const CARTA = 0;
 const PILA = 1;
 const FIN = 2;
 
+let etqSiguiente;
 
 let cartaSeleccionada = -1; //Índice de carta seleccionada
 let pila1 = [];
@@ -48,13 +48,13 @@ console.log(cartas);
 let lsPlayer = JSON.parse(localStorage.getItem('player'));
 if(lsPlayer){
     cargar_jugador(lsPlayer);
+    zonaJuego.hidden = false;
 }
 
 let lsEnJuego = JSON.parse(localStorage.getItem('enJuego'));
 if(lsEnJuego){
     cartas = lsEnJuego.cartas;
     siguiente = lsEnJuego.siguiente;
-    acertadas = lsEnJuego.acertadas;
     etqSiguiente = document.getElementById('siguiente');
     etqSiguiente.innerText = siguiente;
     
@@ -84,12 +84,14 @@ etqPila2.addEventListener('click', () => {
 });
 
 //Event listener de botones
-document.getElementById('nuevoJuego').addEventListener('click', () => {
+const etqNuevoJuego = document.getElementById('nuevoJuego');
+etqNuevoJuego.addEventListener('click', () => {
     cartas = _.shuffle(cartasOrdenadas);
     restablecerCartas();
     divMensaje.hidden = true;
     siguiente.innerText = 'Seleccionar carta';
-})
+});
+etqNuevoJuego.hidden = true;
 
 botonConsultar.addEventListener('click', () => {
     fetch('http://localhost:3000/players').then(resp => {
@@ -99,6 +101,9 @@ botonConsultar.addEventListener('click', () => {
                 if(j.nombre == login.value && j.passwd == password.value){
                     cargar_jugador(j);
                     encontrado = true;
+                    zonaJuego.hidden = false;
+
+
                     break;
                 }
             }
@@ -109,4 +114,5 @@ botonConsultar.addEventListener('click', () => {
     }).catch(error => alert("Error del servidor API REST"));
 })
 
-botonCerrarSesion.addEventListener('click', cerrarSesion)
+botonCerrarSesion.addEventListener('click', cerrarSesion);
+
