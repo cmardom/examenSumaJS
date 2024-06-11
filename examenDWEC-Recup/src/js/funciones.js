@@ -125,6 +125,7 @@ function clickPila(pila,indice) {
             juegosAcabados+=1;
             player.juegosAcabados = juegosAcabados;
             localStorage.setItem("player", JSON.stringify(player));
+            localStorage.removeItem("enJuego");
         }
 
         enJuego.cartas = cartas;
@@ -162,4 +163,5 @@ function cerrarSesion(){
     etqNombreUsuario.innerText = "";
     localStorage.removeItem("player");
     zonaJuego.hidden = true;
+    localStorage.clear(); // borrar todo
 }
